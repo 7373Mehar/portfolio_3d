@@ -39,12 +39,9 @@ Follow these steps to run the project on your local machine:
    npm run dev
    ```
 
-5. Open your browser and go to `http://localhost:3000` to see the website in action.
-
 ## Features
 
 - Interactive 3D elements using Three.js
 - Responsive design
-- Showcases projects, skills, and experience
 
 Feel free to adjust the repository link and license section as needed!
