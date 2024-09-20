@@ -12,7 +12,7 @@ const Projects = () => {
       </h1>
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-        <p>Some of the projects that I developed over the years are</p>
+        <p>Over the years, I have worked on a diverse set of projects, ranging from interactive web applications to complex backend systems. These projects reflect my passion for problem-solving and my commitment to continuously learning and leveraging new technologies. Below is a showcase of some of my work that highlights my skills in software development and innovation.</p>
       </div>
 
       <div className='flex flex-wrap my-20 gap-16'>
