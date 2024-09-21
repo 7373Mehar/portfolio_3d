@@ -11,22 +11,30 @@ import {
     javascript,
     linkedin,
     mongodb,
-    motion,
     mui,
     nextjs,
     nodejs,
     pricewise,
     react,
     redux,
-    sass,
-    snapgram,
     summiz,
     tailwindcss,
-    threads,
-    typescript
+    typescript,
+    angular,
+    DotNet,
+    java,
+    python,
+    mysql,
+    docker,
+    spring
 } from "../assets/icons";
 
 export const skills = [
+    {
+        imageUrl: html,
+        name: "HTML",
+        type: "Frontend",
+    },
     {
         imageUrl: css,
         name: "CSS",
@@ -47,11 +55,7 @@ export const skills = [
         name: "GitHub",
         type: "Version Control",
     },
-    {
-        imageUrl: html,
-        name: "HTML",
-        type: "Frontend",
-    },
+
     {
         imageUrl: javascript,
         name: "JavaScript",
@@ -62,11 +66,6 @@ export const skills = [
         name: "MongoDB",
         type: "Database",
     },
-    // {
-    //     imageUrl: motion,
-    //     name: "Motion",
-    //     type: "Animation",
-    // },
     {
         imageUrl: mui,
         name: "Material-UI",
@@ -111,7 +110,42 @@ export const skills = [
     //     imageUrl: spring,
     //     name: "Spring-Boot",
     //     type: "Backend",
-    // }
+    // },
+    {
+        imageUrl: angular,
+        name: "Angular",
+        type: "Frontend"
+    },
+    {
+        imageUrl: java,
+        name: "Java",
+        type: "Backend"
+    },
+    {
+        imageUrl: DotNet,
+        name: "Dot Net Core",
+        type: "Backend"
+    },
+    {
+        imageUrl: python,
+        name: "Python",
+        type: "Backend"
+    },
+    {
+        imageUrl: docker,
+        name: "Docker",
+        type: "Deployment"
+    },
+    {
+        imageUrl: spring,
+        name: "Spring-Boot",
+        type: "Backend"
+    },
+    {
+        imageUrl: mysql,
+        name: "MySQL",
+        type: "Database"
+    }
 ];
 
 export const experiences = [

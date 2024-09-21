@@ -26,6 +26,13 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import angular from './angular.png'
+import java from './java.jpg'
+import DotNet from './netC.jpg'
+import python from './python.png'
+import mysql from './mysql-logo.svg'
+import docker from './docker.svg'
+import spring from './spring-boot.png'
 
 export {
     css,
@@ -55,5 +62,12 @@ export {
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    angular,
+    java,
+    DotNet,
+    python,
+    mysql,
+    docker,
+    spring
 }
