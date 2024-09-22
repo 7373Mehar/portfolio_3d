@@ -16,16 +16,50 @@ const Home = () => {
     audioRef.current.loop = true;
     const [isRotating, setIsRotating] = useState(false);
     const [currentStage, setCurrentStage] = useState(1);
-    const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+    const [isPlayingMusic, setIsPlayingMusic] = useState(true);
+    const [autoplayError, setAutoplayError] = useState(false);
 
     useEffect(() => {
-        if(isPlayingMusic){
-            audioRef.current.play();
+        if (isPlayingMusic) {
+          // Start the audio muted to try bypassing autoplay restrictions
+          audioRef.current.volume = 0;
+          audioRef.current.loop = true;
+          audioRef.current.play().then(() => {
+            // Increase volume after a short delay
+            setTimeout(() => {
+              audioRef.current.volume = 0.4;
+            }, 1000);
+          }).catch((error) => {
+            if (error.name === 'NotAllowedError') {
+              setAutoplayError(true); // Autoplay error occurred
+            }
+          });
+        } else {
+          audioRef.current.pause();
         }
         return () => {
-            audioRef.current.pause();
-        }
-    }, [isPlayingMusic])
+          audioRef.current.pause();
+        };
+      }, [isPlayingMusic]);
+
+    useEffect(() => {
+        const handleUserInteraction = () => {
+            if (!audioRef.current.playing && isPlayingMusic) {
+                audioRef.current.play();
+            }
+            // Remove the event listener after the first interaction
+            window.removeEventListener('click', handleUserInteraction);
+            window.removeEventListener('keydown', handleUserInteraction);
+        };
+        // Add event listeners for the first user interaction
+        window.addEventListener('click', handleUserInteraction);
+        window.addEventListener('keydown', handleUserInteraction);
+        
+        return () => {
+            window.removeEventListener('click', handleUserInteraction);
+            window.removeEventListener('keydown', handleUserInteraction);
+        };
+    }, [isPlayingMusic]);
 
     const adjustIslandForScreenSize = () => {
         let screenScale = null;
@@ -95,7 +129,6 @@ const Home = () => {
                     alt='sound'
                     className='w-10 h-10 cursor-pointer object-container'
                     onClick={() => setIsPlayingMusic(!isPlayingMusic)}/>
-                    
           </div>
       </section>
     )
